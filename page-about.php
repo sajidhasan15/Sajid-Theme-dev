@@ -5,7 +5,7 @@
 
    <section class="home-blog">
       <div class="container">
-            <div class="blog-item">
+            <div class="blog-items">
                   <?php
                         if(have_posts()): 
                               while(have_posts()) : the_post();

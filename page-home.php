@@ -10,7 +10,25 @@
 </section>
    <section class="home-blog">
       <div class="container">
-            <div class="blog-item">
+            <div class="services-item">
+                  <?php 
+                  if (is_active_sidebar('services-1')) {
+                        dynamic_sidebar('services-1');
+                  } ?>
+            </div>
+            <div class="services-item">
+                  <?php 
+                  if (is_active_sidebar('services-2')) {
+                        dynamic_sidebar('services-2');
+                  } ?>
+            </div>
+            <div class="services-item">
+                  <?php 
+                  if (is_active_sidebar('services-3')) {
+                        dynamic_sidebar('services-3');
+                  } ?>
+            </div>
+            <div class="blog-items">
                   <?php
                         if(have_posts()): 
                               while(have_posts()) : the_post();

@@ -11,19 +11,23 @@ add_action('wp_enqueue_scripts', 'sajiddev_load_scripts');
 
 
 function sajiddev_config(){
+     /********** Nav Menu ***********/
      register_nav_menus(
           array(
           'wp_sajiddev_main_menu' => 'Main Menu',
           'wp_sajiddev_footer_menu' => 'Footer Menu'
           )
-     );
+     ); 
 
      $args = array(
           'height' => 225,
           'width' => 1920
      );
      add_theme_support('custom-header', $args);
+     /********** Thumbnails ***********/
      add_theme_support('post-thumbnails');
+
+     /********** Logo ***********/
      add_theme_support('custom-logo', array(
           'width' => 200,
           'height' => 110,
@@ -32,3 +36,57 @@ function sajiddev_config(){
      ));
  }
  add_action('after_setup_theme', 'sajiddev_config', 0);
+ 
+ /********** Sidebar ***********/
+ add_action('widgets_init', 'sajiddev_sidebars');
+ function sajiddev_sidebars(){
+     register_sidebar(
+          array(
+               'name' => 'Blog Sidebar',
+               'id' => 'sidebar-blog',
+               'description' => 'This is a Blog Sidebar. You can add swidgets here...',
+               'before_widget' => '<div class="widget-wrapper">',
+               'after_widget' => '</div>',
+               'before_title' => '<h4 class="widget-title">',
+               'after_title' => '</h4>'
+          ) 
+     );
+
+     register_sidebar(
+          array(
+               'name' => 'Services 1',
+               'id' => 'services-1',
+               'description' => 'This is a Sevices Sidebar. You can add service here.',
+               'before_widget' => '<div class="widget-wrapper">',
+               'after_widget' => '</div>',
+               'before_title' => '<h4 class="widget-title">',
+               'after_title' => '</h4>'
+          )
+     );
+     
+     register_sidebar(
+          array(
+               'name' => 'Services 2',
+               'id' => 'services-2',
+               'description' => 'This is a Sevices Sidebar. You can add service here.',
+               'before_widget' => '<div class="widget-wrapper">',
+               'after_widget' => '</div>',
+               'before_title' => '<h4 class="widget-title">',
+               'after_title' => '</h4>'
+          )
+     );
+     
+     register_sidebar(
+          array(
+               'name' => 'Services 3',
+               'id' => 'services-3',
+               'description' => 'This is a Sevices Sidebar. You can add service here.',
+               'before_widget' => '<div class="widget-wrapper">',
+               'after_widget' => '</div>',
+               'before_title' => '<h4 class="widget-title">',
+               'after_title' => '</h4>'
+          )
+     );
+     
+
+ }

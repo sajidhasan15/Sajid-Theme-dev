@@ -8,7 +8,7 @@
   <div id="main" class="site-main">
       <h1>Blog</h1>
       <div class="container">
-            <div class="blog-item">
+            <div class="blog-items">
                   <?php
                         if(have_posts()): 
                               while(have_posts()) : the_post();
@@ -32,6 +32,7 @@
                         <p>Nothing yet to be displayed!</p>
                               <?php endif; ?>
             </div>
+            <?php get_sidebar(); ?>
       </div>
   </div>
  </div>
