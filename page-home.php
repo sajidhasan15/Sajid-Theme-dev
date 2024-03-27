@@ -44,8 +44,8 @@
                               ?>
 
                               <article class="latest-news">
-                                    <?php the_post_thumbnail( 'large' ); ?>
-                                    <h3><?php the_title(); ?></h3>
+                                    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'large' ); ?></a>
+                                    <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                                     <div class="meta-info">
                                           <p>By <span> <?php the_author_posts_link(); ?></span></p>
                                           <p>Categories: <?php echo the_category(' ');  ?> </p>
