@@ -9,6 +9,7 @@
     Services
 </section>
    <section class="home-blog">
+      <h2>Latest News</h2>
       <div class="container">
             <div class="services-item">
                   <?php 
@@ -28,29 +29,39 @@
                         dynamic_sidebar('services-3');
                   } ?>
             </div>
-            <div class="blog-items">
                   <?php
-                        if(have_posts()): 
-                              while(have_posts()) : the_post();
+                  $args = array(
+                        'post_type' => 'post',
+                        'posts_per_page' => 3,
+                        'category__in' => array( 4, 17, 20 ),
+                        'category__not_in' => array( 1 )
+                  );
+
+                  $postlist = new WP_Query($args);
+
+                        if($postlist->have_posts()): 
+                              while($postlist->have_posts()) : $postlist->the_post();
                               ?>
 
-                              <article>
-                                    <h2><?php the_title(); ?></h2>
+                              <article class="latest-news">
+                                    <?php the_post_thumbnail( 'large' ); ?>
+                                    <h3><?php the_title(); ?></h3>
                                     <div class="meta-info">
-                                          <p>Posted in <?php echo get_the_date(); ?></p>
-                                          <p>Categories <?php echo the_category(' ');  ?> </p>
-                                          <p>Tags <?php the_tags('', ', '); ?></p>
+                                          <p>By <span> <?php the_author_posts_link(); ?></span></p>
+                                          <p>Categories: <?php echo the_category(' ');  ?> </p>
+                                          <p>Tags: <?php the_tags('', ', '); ?></p>
+                                          <p><span> <?php get_the_date(); ?></span></p>
                                     </div>
-                                    <?php the_content(); ?>
+                                    <?php the_excerpt(); ?>
                               </article>
 
                               <?php
                               endwhile;
+                              wp_reset_postdata();
                         else:
                         ?>
                         <p>Nothing yet to be displayed!</p>
                               <?php endif; ?>
-            </div>
       </div>
     
       </section>
