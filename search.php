@@ -3,31 +3,35 @@
 <div id="primary">
      <div id="main">
           <div class="container">
+
+          <h1>Search results for: <?php echo get_search_query(); ?></h1>
                <?php 
+
+               get_search_form();
+
+
                while(have_posts() ): 
                     the_post();
                     ?>
                     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <header>
-                       <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>  
+                       <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>  
+                       <?php if('post' == get_post_type()) : ?>
                        <div class="meta-info">
                                    <p>By <span> <?php the_author_posts_link(); ?></span></p>
                                    <p>Categories: <?php echo the_category(' ');  ?> </p>
                                    <p>Tags: <?php the_tags('', ', '); ?></p>
                                    <p><span> <?php get_the_date(); ?></span></p>
                               </div>
-                    </header>                      
+                              <?php endif; ?>
+                    </header>      
                     <div class="content">
                          <?php the_excerpt(); ?>
-                    </div>  
+                    </div>                
+                              
                     </article>
 
                <?php
-
-               if (comments_open() || get_comments_number()) {
-                    comments_template();
-               }
-
                endwhile;
                ?>
           </div>
