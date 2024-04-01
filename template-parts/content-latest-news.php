@@ -1,5 +1,7 @@
 <article class="latest-news">
-     <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'large' ); ?></a>
+     <?php if ( has_post_thumbnail()): ?>
+          <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'large' ); ?></a>
+     <?php endif; ?>
      <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
      <div class="meta-info">
           <p>By <span> <?php the_author_posts_link(); ?></span></p>
