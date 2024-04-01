@@ -10,7 +10,7 @@
 </section>
    <section class="home-blog">
       <h2>Latest News</h2>
-      <div class="container">
+      <div class="container con">
             <div class="services-item">
                   <?php 
                   if (is_active_sidebar('services-1')) {
@@ -41,27 +41,13 @@
 
                         if($postlist->have_posts()): 
                               while($postlist->have_posts()) : $postlist->the_post();
-                              ?>
-
-                              <article class="latest-news">
-                                    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'large' ); ?></a>
-                                    <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                                    <div class="meta-info">
-                                          <p>By <span> <?php the_author_posts_link(); ?></span></p>
-                                          <p>Categories: <?php echo the_category(' ');  ?> </p>
-                                          <p>Tags: <?php the_tags('', ', '); ?></p>
-                                          <p><span> <?php get_the_date(); ?></span></p>
-                                    </div>
-                                    <?php the_excerpt(); ?>
-                              </article>
-
-                              <?php
+                              get_template_part('template-parts/content', 'latest-news');
                               endwhile;
                               wp_reset_postdata();
                         else:
                         ?>
                         <p>Nothing yet to be displayed!</p>
-                              <?php endif; ?>
+                        <?php endif; ?>
       </div>
     
       </section>
