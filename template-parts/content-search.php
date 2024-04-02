@@ -4,8 +4,12 @@
           <?php if('post' == get_post_type()) : ?>
           <div class="meta-info">
                     <p>By <span> <?php the_author_posts_link(); ?></span></p>
-                    <p>Categories: <?php echo the_category(' ');  ?> </p>
-                    <p>Tags: <?php the_tags('', ', '); ?></p>
+                    <?php if( has_category()): ?>
+                         <p>Categories <?php echo the_category(' ');  ?> </p>
+                    <?php endif; ?>
+                    <?php if( has_tag()): ?>
+                         <p>Tags <?php the_tags('', ', '); ?></p>
+                    <?php endif; ?>
                     <p><span> <?php get_the_date(); ?></span></p>
                </div>
                <?php endif; ?>
