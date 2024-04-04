@@ -32,8 +32,6 @@
      </div>
     </div>
    </section>
-   <?php 
-      if( ! is_page( 'landing-page' )): ?>
    <section class="menu-area">
      <div class="container">
       <nav class="main-menu">
@@ -48,5 +46,4 @@
       </nav>
      </div>
     </section>
-    <?php endif; ?>
   </header>
