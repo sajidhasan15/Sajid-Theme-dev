@@ -14,6 +14,13 @@ add_action('wp_enqueue_scripts', 'sajiddev_load_scripts');
 
 
 function sajiddev_config(){
+
+     $textdomain = 'sajiddev';
+     load_theme_textdomain($textdomain, get_template_directory(). '/languages/');
+
+
+
+
      /********** Nav Menu ***********/
      register_nav_menus(
           array(
@@ -49,9 +56,9 @@ function sajiddev_config(){
  function sajiddev_sidebars(){
      register_sidebar(
           array(
-               'name' => 'Blog Sidebar',
+               'name' => __('Blog Sidebar', 'sajiddev'),
                'id' => 'sidebar-blog',
-               'description' => 'This is a Blog Sidebar. You can add swidgets here...',
+               'description' => __('This is a Blog Sidebar. You can add swidgets here...', 'sajiddev'),
                'before_widget' => '<div class="widget-wrapper">',
                'after_widget' => '</div>',
                'before_title' => '<h4 class="widget-title">',
@@ -61,9 +68,9 @@ function sajiddev_config(){
 
      register_sidebar(
           array(
-               'name' => 'Services 1',
+               'name' => __('Services 1', 'sajiddev'),
                'id' => 'services-1',
-               'description' => 'This is a Sevices Sidebar. You can add service here.',
+               'description' => __('This is a Sevices Sidebar. You can add service here.', 'sajiddev'),
                'before_widget' => '<div class="widget-wrapper">',
                'after_widget' => '</div>',
                'before_title' => '<h4 class="widget-title">',
@@ -73,9 +80,9 @@ function sajiddev_config(){
      
      register_sidebar(
           array(
-               'name' => 'Services 2',
+               'name' => __('Services 2', 'sajiddev'),
                'id' => 'services-2',
-               'description' => 'This is a Sevices Sidebar. You can add service here.',
+               'description' => __('This is a Sevices Sidebar. You can add service here.', 'sajiddev'),
                'before_widget' => '<div class="widget-wrapper">',
                'after_widget' => '</div>',
                'before_title' => '<h4 class="widget-title">',
@@ -85,9 +92,9 @@ function sajiddev_config(){
      
      register_sidebar(
           array(
-               'name' => 'Services 3',
+               'name' => __('Services 3', 'sajiddev'),
                'id' => 'services-3',
-               'description' => 'This is a Sevices Sidebar. You can add service here.',
+               'description' => __('This is a Sevices Sidebar. You can add service here.', 'sajiddev'),
                'before_widget' => '<div class="widget-wrapper">',
                'after_widget' => '</div>',
                'before_title' => '<h4 class="widget-title">',

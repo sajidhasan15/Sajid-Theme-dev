@@ -6,8 +6,8 @@ function sajiddev_customizer( $wp_customize ){
           $wp_customize->add_section(
                'sec_copyright',
                array(
-                    'title' => 'Copyright Settings',
-                    'description' => 'Copyright Settings'
+                    'title' => __('Copyright Settings', 'sajiddev'),
+                    'description' => __('Copyright Settings', 'sajiddev')
                )
 
           );
@@ -17,7 +17,7 @@ function sajiddev_customizer( $wp_customize ){
                'set_copyright',
                array(
                     'type' => 'theme_mod',
-                    'default' => 'Copyright X - All Rights Reserved',
+                    'default' => __('Copyright X - All Rights Reserved', 'sajiddev'),
                     'sanitize_callback' => 'sanitize_text_field'
                )
           );
@@ -26,8 +26,8 @@ function sajiddev_customizer( $wp_customize ){
           $wp_customize->add_control(
                'set_copyright',
                array(
-                    'Label' => 'Copyright Information',
-                    'description' => 'Please, type your description',
+                    'Label' => __('Copyright Information', 'sajiddev'),
+                    'description' => __('Please, type your description', 'sajiddev'),
                     'section' => 'sec_copyright',
                     'type' => 'text'
                )
@@ -37,7 +37,7 @@ function sajiddev_customizer( $wp_customize ){
           $wp_customize->add_section(
                'sec_hero',
                array(
-                    'title' => 'Hero Section',
+                    'title' => __('Hero Section', 'sajiddev'),
                )
           );
 
@@ -46,7 +46,7 @@ function sajiddev_customizer( $wp_customize ){
                'sec_hero_title',
                array(
                     'type' => 'theme_mod',
-                    'default' => 'Please, add some title',
+                    'default' => __('Please, add some title', 'sajiddev'),
                     'sanitize_callback' => 'sanitize_text_field'
                )
           );
@@ -55,8 +55,8 @@ function sajiddev_customizer( $wp_customize ){
           $wp_customize->add_control(
                'sec_hero_title',
                array(
-                    'Label' => 'Hero title',
-                    'description' => 'Please, type your title here',
+                    'Label' => __('Hero title', 'sajiddev'),
+                    'description' => __('Please, type your title here', 'sajiddev'),
                     'section' => 'sec_hero',
                     'type' => 'text'
                )
@@ -68,7 +68,7 @@ function sajiddev_customizer( $wp_customize ){
                'sec_hero_subtitle',
                array(
                     'type' => 'theme_mod',
-                    'default' => 'Please, add some subtitle',
+                    'default' => __('Please, add some subtitle', 'sajiddev'),
                     'sanitize_callback' => 'sanitize_textarea_field'
                )
           );
@@ -77,8 +77,8 @@ function sajiddev_customizer( $wp_customize ){
           $wp_customize->add_control(
                'sec_hero_subtitle',
                array(
-                    'Label' => 'Hero subtitle',
-                    'description' => 'Please, type your subtitle here',
+                    'Label' => __('Hero subtitle', 'sajiddev'),
+                    'description' => __('Please, type your subtitle here', 'sajiddev'),
                     'section' => 'sec_hero',
                     'type' => 'textarea'
                )
@@ -90,7 +90,7 @@ function sajiddev_customizer( $wp_customize ){
                'sec_hero_button_text',
                array(
                     'type' => 'theme_mod',
-                    'default' => 'Learn more',
+                    'default' => __('Learn more', 'sajiddev'),
                     'sanitize_callback' => 'sanitize_text_field'
                )
           );
@@ -99,8 +99,8 @@ function sajiddev_customizer( $wp_customize ){
           $wp_customize->add_control(
                'sec_hero_button_text',
                array(
-                    'Label' => 'Hero button text',
-                    'description' => 'Please, type your hero button text here',
+                    'Label' => __('Hero button text', 'sajiddev'),
+                    'description' => __('Please, type your hero button text here', 'sajiddev'),
                     'section' => 'sec_hero',
                     'type' => 'text'
                )
@@ -121,8 +121,8 @@ function sajiddev_customizer( $wp_customize ){
           $wp_customize->add_control(
                'sec_hero_button_link',
                array(
-                    'Label' => 'Hero button Link',
-                    'description' => 'Please, type your hero button link here',
+                    'Label' => __('Hero button Link', 'sajiddev'),
+                    'description' => __('Please, type your hero button link here', 'sajiddev'),
                     'section' => 'sec_hero',
                     'type' => 'url'
                )
@@ -143,8 +143,8 @@ function sajiddev_customizer( $wp_customize ){
           $wp_customize->add_control(
                'set_hero_height',
                array(
-                    'Label' => 'Hero height',
-                    'description' => 'Please, set height ',
+                    'Label' => __('Hero height', 'sajiddev'),
+                    'description' => __('Please, set height ', 'sajiddev'),
                     'section' => 'sec_hero',
                     'type' => 'number'
                )
@@ -171,7 +171,7 @@ function sajiddev_customizer( $wp_customize ){
           $wp_customize->add_section( 
           'sec_blog', 
           array(
-               'title' => 'Blog Section'
+               'title' => __('Blog Section', 'sajiddev')
           ) );
      
           // Posts per page
@@ -185,8 +185,8 @@ function sajiddev_customizer( $wp_customize ){
           $wp_customize->add_control( 
                'set_per_page', 
                array(
-               'label' => 'Posts per page',
-               'description' => 'How many items to display in the post list?',			
+               'label' => __('Posts per page', 'sajiddev'),
+               'description' => __('How many items to display in the post list?', 'sajiddev'),			
                'section' => 'sec_blog',
                'type' => 'number'
           ) );
@@ -202,8 +202,8 @@ function sajiddev_customizer( $wp_customize ){
           $wp_customize->add_control( 
                'set_category_include', 
                array(
-               'label' => 'Post categories to include',
-               'description' => 'Comma separated values or single category ID',
+               'label' => __('Post categories to include', 'sajiddev'),
+               'description' => __('Comma separated values or single category ID', 'sajiddev'),
                'section' => 'sec_blog',
                'type' => 'text'
           ) );	
@@ -219,8 +219,8 @@ function sajiddev_customizer( $wp_customize ){
           $wp_customize->add_control( 
                'set_category_exclude', 
                array(
-               'label' => 'Post categories to exclude',
-               'description' => 'Comma separated values or single category ID',			
+               'label' => __('Post categories to exclude', 'sajiddev'),
+               'description' => __('Comma separated values or single category ID', 'sajiddev'),			
                'section' => 'sec_blog',
                'type' => 'text'
           ) );
